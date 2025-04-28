@@ -4,18 +4,26 @@ body {
     background: linear-gradient(to right, #ADD8E6, #00008B, #4B0082, #FFB6C1);
     color: white;
     text-align: center;
-    transition: all 0.5s ease-in-out;
+    margin: 0;
+    padding: 0;
 }
 
-/* Animated Nav Bar */
+/* Navbar - Fixed to Top */
+.animated-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    z-index: 1000;
+}
+
 .animated-nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    animation: fadeInNav 1.5s ease-in-out;
+    padding: 0;
+    margin: 0;
 }
 
 .animated-nav ul li {
@@ -26,7 +34,23 @@ body {
 
 .animated-nav ul li:hover {
     background: #444;
-    transform: scale(1.1);
+}
+
+/* Footer - Fixed at Bottom */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+}
+
+/* Language Dropdown */
+#language {
+    background: white;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 /* Profile Section */
@@ -37,50 +61,43 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* Footer Styling */
-#footer-content {
-    display: none;
-    background: rgba(0, 0, 0, 0.8);
+/* Projects Cards */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    transition: all 0.3s ease-in-out;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-button {
-    background: darkblue;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: lightblue;
-}
-
-/* Keyframe Animations */
-@keyframes fadeInNav {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.card:hover {
+    transform: scale(1.05);
 }
 
 /* Mobile Layout */
-.mobile-view nav ul {
-    flex-direction: column;
-    text-align: center;
-}
+@media (max-width: 768px) {
+    .animated-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.mobile-view .projects .card {
-    width: 90%;
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Tablet Layout */
-.tablet-view nav ul {
-    flex-wrap: wrap;
-}
-
-/* Desktop Layout */
-.desktop-view nav ul {
-    display: flex;
-    justify-content: center;
+@media (max-width: 1024px) {
+    .animated-nav ul {
+        flex-wrap: wrap;
+    }
 }
