@@ -1,1 +1,133 @@
-/* CSS content here */
+/* General */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, lightblue, lightpink);
+    color: darkblue;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: darkblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: lightpink;
+}
+
+nav .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+nav button, nav select {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkpurple;
+    color: white;
+    cursor: pointer;
+}
+
+nav button:hover, nav select:hover {
+    background-color: lightpink;
+}
+
+/* Content */
+.main-content {
+    padding-top: 80px; /* To prevent overlap with navbar */
+    padding-bottom: 80px; /* To prevent overlap with footer */
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: lightpink;
+}
+
+/* Arrows and Language Dropdown */
+#upArrow, #downArrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+#downArrow {
+    top: 40px;
+}
+
+#languageDropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    footer ul {
+        flex-direction: column;
+    }
+}
