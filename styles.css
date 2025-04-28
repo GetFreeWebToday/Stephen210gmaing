@@ -63,3 +63,24 @@ button:hover {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Mobile Layout */
+.mobile-view nav ul {
+    flex-direction: column;
+    text-align: center;
+}
+
+.mobile-view .projects .card {
+    width: 90%;
+}
+
+/* Tablet Layout */
+.tablet-view nav ul {
+    flex-wrap: wrap;
+}
+
+/* Desktop Layout */
+.desktop-view nav ul {
+    display: flex;
+    justify-content: center;
+}
