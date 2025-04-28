@@ -1,15 +1,21 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #ADD8E6, #00008B, #4B0082, #FFB6C1);
     color: white;
     text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 
+/* Animated Nav Bar */
 .animated-nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    animation: fadeIn 1s ease-in-out;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    animation: fadeInNav 1.5s ease-in-out;
 }
 
 .animated-nav ul li {
@@ -19,18 +25,41 @@ body {
 }
 
 .animated-nav ul li:hover {
-    background: #333;
+    background: #444;
+    transform: scale(1.1);
+}
+
+/* Profile Section */
+#profile {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
+
+/* Footer Styling */
+#footer-content {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 button {
+    background: darkblue;
+    color: white;
+    padding: 10px;
+    border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-#footer-content {
-    display: none;
+button:hover {
+    background: lightblue;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Keyframe Animations */
+@keyframes fadeInNav {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
