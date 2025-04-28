@@ -5,19 +5,20 @@ body {
     text-align: center;
 }
 
-nav ul {
+.animated-nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    animation: fadeIn 1s ease-in-out;
 }
 
-nav ul li {
+.animated-nav ul li {
     margin: 0 15px;
     padding: 10px;
     transition: all 0.3s ease-in-out;
 }
 
-nav ul li:hover {
+.animated-nav ul li:hover {
     background: #333;
 }
 
@@ -29,3 +30,7 @@ button {
     display: none;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
