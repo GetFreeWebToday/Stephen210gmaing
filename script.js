@@ -29,3 +29,24 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuote = (currentQuote + 1) % quotes.length;
     }, 3000);
 });
+
+// Device Detection
+document.addEventListener("DOMContentLoaded", function () {
+    function detectDevice() {
+        let width = window.innerWidth;
+
+        if (width <= 768) {
+            document.body.classList.add("mobile-view");
+            document.body.classList.remove("tablet-view", "desktop-view");
+        } else if (width <= 1024) {
+            document.body.classList.add("tablet-view");
+            document.body.classList.remove("mobile-view", "desktop-view");
+        } else {
+            document.body.classList.add("desktop-view");
+            document.body.classList.remove("mobile-view", "tablet-view");
+        }
+    }
+
+    detectDevice();
+    window.addEventListener("resize", detectDevice);
+});
