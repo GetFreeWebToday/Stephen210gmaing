@@ -44,3 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
     detectDevice();
     window.addEventListener("resize", detectDevice);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const footerContent = document.getElementById("footer-content");
+    const toggleBtn = document.getElementById("toggle-btn");
+
+    // Toggle Footer Visibility
+    toggleBtn.addEventListener("click", function () {
+        footerContent.style.display = footerContent.style.display === "none" ? "block" : "none";
+    });
+
+    // Language Selector Functionality
+    const languageDropdown = document.getElementById("language");
+    languageDropdown.addEventListener("change", function () {
+        const selectedLanguage = languageDropdown.value;
+        
+        if (selectedLanguage === "es") {
+            document.body.innerHTML = document.body.innerHTML.replace("Welcome to Stephen210Gaming!", "¡Bienvenido a Stephen210Gaming!");
+        } else {
+            document.body.innerHTML = document.body.innerHTML.replace("¡Bienvenido a Stephen210Gaming!", "Welcome to Stephen210Gaming!");
+        }
+    });
+});
